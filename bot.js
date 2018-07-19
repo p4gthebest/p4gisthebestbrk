@@ -107,11 +107,5 @@ client.on('message', msg => {
   }
 });
 
-bot.on('message', (message) => {
-	if(message.content == 'ping') {
-		message.channel.sendmessage('pong');
-	}
-});
-
 
 client.login(process.env.BOT_TOKEN);
