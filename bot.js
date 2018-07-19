@@ -151,8 +151,10 @@ client.on('message', message => {
        .setColor('RANDOM')
        .setDescription(`البرودكاست :mega:
 **:shield: السيرفر : ** ${message.guild.name}
+
 ** :thinking:  المرسل : ** ${message.author.username}
-**  الرسالة : ** ${args}
+
+** :heart:  الرسالة : ** ${args}
  
  
  
