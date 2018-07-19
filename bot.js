@@ -54,7 +54,7 @@ client.on("message", message => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "=help"){
+     if (message.content === "-help"){
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
            .setThumbnail(message.author.avatarURL)
@@ -94,7 +94,7 @@ client.on('message', message => {
 :incoming_envelope: 『رابط البوت』
 =invite
 `)
-.setColor('#ffc85b')
+.setColor('#00994c')
 
 message.author.sendEmbed(embed)
 }
