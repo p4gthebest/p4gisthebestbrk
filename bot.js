@@ -108,10 +108,12 @@ client.on('message', msg => {
 });
 
 
-client.on('message', msg => {
-	if(message.content.startwith (prefix + "ping"{
-		msg.reply('**:money_mouth:pong');
-	})
-});
-
+client.on('message',msg=>{
+	if(!msg.channel.guild) return;
+	if(msg.content.startswith (prefix + 'help')) {
+		msg.reply('**pong');
+	}
+};
+	  
+	  
 client.login(process.env.BOT_TOKEN);
