@@ -28,7 +28,6 @@ client.user.setGame(`DragonsTeam`,"http://twitch.tv/S-F")
   console.log('')
 });
 
-
 client.on("message", message => {
     var prefix = "-"; 
  
@@ -51,5 +50,62 @@ client.on("message", message => {
 
      
 });
+
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === "=help"){
+  let embed = new Discord.RichEmbed()
+          .setAuthor(message.author.username, message.author.avatarURL)
+           .setThumbnail(message.author.avatarURL)
+                 .setTimestamp()
+    .setDescription(`
+
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+:small_blue_diamond:『اوامر العامة』   
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
+:newspaper:『لمعرفة السيرفر』
+=server
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
+:robot: 『لمعرفة البوت』
+=bot
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
+:no_entry: 『لطرد شخص』
+=kick
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
+:warning:  『 لأعطاء شخص بان』
+=ban
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
+:x:        『لمسح الشات』
+=clear 
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
+:blue_book:『لروئية الرتب』             
+=roles
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:   
+:signal_strength: 『لرؤية سرعة البوت』
+=ping   
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+:busts_in_silhouette: 『كود برودكاست』
+=bc 
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:    
+:incoming_envelope: 『البوت يكتب』
+=say (اللي تبي تكتبه)
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:    
+:incoming_envelope: 『رابط البوت』
+=invite
+`)
+.setColor('#ffc85b')
+
+message.author.sendEmbed(embed)
+}
+});
+
+client.on('message', msg => {
+      if(!msg.channel.guild) return;
+    if(msg.content.startsWith (prefix  + 'help')) {
+    msg.reply('**:runner: شيك علي الخاص**');
+  }
+});
+
 
 client.login(process.env.BOT_TOKEN);
