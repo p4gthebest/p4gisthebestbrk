@@ -108,4 +108,10 @@ client.on('message', msg => {
 });
 
 
+client.on('message', msg => {
+	if(message.content.startwith (prefix + "ping"{
+		msg.reply('**:money_mouth:pong');
+	})
+});
+
 client.login(process.env.BOT_TOKEN);
