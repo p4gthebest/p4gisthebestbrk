@@ -159,7 +159,7 @@ client.on('message', message => {
  
         `)
          .setTimestamp()
-         .setFooter('S Bot' , 'https://cdn.discordapp.com/avatars/465885551329804288/55614337cfb9813916a60383469736d9.jpg?size=128')
+         .setFooter('P4G BOT (Dragons Team)' , 'https://cdn.discordapp.com/avatars/465174925939048448/9c3d0e336e5d42dcadcc9f568bd8d760.jpg?size=128')
     m.send({ embed: bc })
     msg.delete();
     })
