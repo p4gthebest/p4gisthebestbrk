@@ -152,9 +152,9 @@ client.on('message', message => {
        .setDescription(`البرودكاست :mega:
 **:shield: السيرفر : ** ${message.guild.name}
 
-** :thinking:  المرسل : ** ${message.author.username}
+**:thinking: المرسل : ** ${message.author.username}
 
-** :heart:  الرسالة : ** ${args}
+**:heart: الرسالة : ** ${args}
  
  
  
