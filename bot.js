@@ -222,7 +222,7 @@ var mentionned = message.mentions.members.first();
 
 client.on("message", message => {
     var prefix = "-"
-    if (!message.content.startsWith(prefix + 'mc3d')) return;
+    if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
         if(command === "mc3d") {
