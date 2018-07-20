@@ -244,7 +244,7 @@ client.on('message', function(msg) {
       .setThumbnail(msg.guild.iconURL)
       .setTitle(`:eight_pointed_black_star: Showing Details Of :eight_pointed_black_star:
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
-:heart:${msg.guild.name}*:heart:`)
+:heart:${msg.guild.name}:heart:`)
       
       .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
 	    
