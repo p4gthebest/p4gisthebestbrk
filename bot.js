@@ -242,7 +242,10 @@ client.on('message', function(msg) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
-      .setTitle(`:eight_pointed_black_star: Showing Details Of  **:Heart:${msg.guild.name}*:heart:`)
+      .setTitle(`:eight_pointed_black_star: Showing Details Of :eight_pointed_black_star:
+:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+:heart:${msg.guild.name}*:heart:`)
+      
       .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
 	    
       .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]
