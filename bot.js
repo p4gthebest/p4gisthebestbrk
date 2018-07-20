@@ -28,6 +28,8 @@ client.user.setGame(`DragonsTeam`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+
+//-clear
 client.on("message", message => {
     var prefix = "-"; 
  
@@ -52,6 +54,8 @@ client.on("message", message => {
 });
 
 
+
+//-help
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === "-help"){
@@ -108,6 +112,9 @@ client.on('message', msg => {
 });
 
 
+
+
+//-invites
 client.on('message', message => {
    if(message.content.startsWith(prefix + "invites")) {
     message.guild.fetchInvites().then(invs => {
@@ -123,8 +130,12 @@ client.on('message', message => {
 });
   }
 });
+
+
 	  
 
+
+//-bc
  client.on('message', message => {
               if(!message.channel.guild) return;
     var prefix = "-";
@@ -174,6 +185,8 @@ client.on('message', message => {
     });
 
 
+
+//-user
     client.on('message', message => {
           
 
@@ -220,6 +233,46 @@ var mentionned = message.mentions.members.first();
       
      });
 
+
+
+//-server
+client.on('message', function(msg) {
+    const prefix = '-'
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+      .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField('🔴**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField('📝**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField('🎤**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+      .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+      .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
+
+
+
+//-say
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "say") {
+   message.channel.sendMessage(args.join("  "))
+   message.delete()
+  }
+ });
 
 
 
