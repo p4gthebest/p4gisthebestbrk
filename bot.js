@@ -211,7 +211,7 @@ var mentionned = message.mentions.members.first();
 .addField(` لقد قمت بدعوة :`, ` ${inviteCount} `)
       
       
-.setFooter(`- Requested By: ${message.author.tag}`);;
+.setFooter(- Requested By: ${message.author.tag}`);;
 })
 }
 	   
