@@ -69,34 +69,34 @@ client.on('message', message => {
 :small_blue_diamond:『اوامر العامة』   
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: 
 :newspaper:『لمعرفة السيرفر』
-=server
+-server
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :robot: 『لمعرفة البوت』
-=bot
+-bot
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :no_entry: 『لطرد شخص』
-=kick
+-kick
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :warning:  『 لأعطاء شخص بان』
-=ban
+-ban
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :x:        『لمسح الشات』
-=clear 
+-clear 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:      
 :blue_book:『لروئية الرتب』             
-=roles
+-roles
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:   
 :signal_strength: 『لرؤية سرعة البوت』
-=ping   
+-ping   
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 :busts_in_silhouette: 『كود برودكاست』
-=bc 
+-bc 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:    
 :incoming_envelope: 『البوت يكتب』
-=say (اللي تبي تكتبه)
+-say (اللي تبي تكتبه)
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:    
 :incoming_envelope: 『رابط البوت』
-=invite
+-invite
 `)
 .setColor('#00994c')
 
@@ -111,7 +111,10 @@ client.on('message', msg => {
   }
 });
 
-
+client.on('message',message => {
+	if(message.content.startsWith(prefix + "ping")) {
+		message.channel.sendMessage(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+	}});
 
 
 //-invites
